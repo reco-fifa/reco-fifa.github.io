@@ -1,0 +1,40 @@
+---
+layout: default
+---
+
+
+{%- if page.title -%}
+<h1>{{ page.title }}</h1>
+{%- endif -%}
+
+{{ content }}
+
+{%- if site.posts.size > 0 -%}
+
+    {%- for post in site.posts -%}
+    <div class="card">
+    {%- assign date_format = site.minima.date_format | default: "%d.%m.%Y" -%}
+    <!-- <span class="post-meta">{{ post.date | date: date_format }}</span> -->
+    <div class="card-body">
+        <h3 class="card-title">
+            {{ post.title | escape }}
+        </h3>
+        <h6 class="card-subtitle mb-2 text-muted">{{ post.date | date: date_format }}&nbsp;
+            {%- if post.author -%}
+            by {{ post.author }}
+            {%- endif -%}
+        </h6>
+        <p class="card-text">
+            {%- if site.show_excerpts -%}
+                {{ post.excerpt }}
+            {%- endif -%}
+        </p>
+        <a href="{{ post.url | relative_url }}" class="btn btn-secondary">Read Article</a>
+    </div>
+    
+    
+    </div>
+    {%- endfor -%}
+
+<p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
+{%- endif -%}
