@@ -23,8 +23,3 @@ Kontakt
 
 E-Mail: [{{ site.email }}](mailto://{{ site.email }})  
 
-Verantwortlich für Inhalt und Design:  
-
-Julian Körkel  
-Behmstr. 71  
-10439 Berlin
